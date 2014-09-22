@@ -23,8 +23,6 @@ public class ClientSender {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ClientSender.class);
 	
-	private static final AtomicLong ID_ATOMIC_LONG = new AtomicLong(0);
-	
 	class Result{
 		Object object;
 	}
