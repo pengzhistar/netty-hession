@@ -7,6 +7,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import org.jboss.netty.bootstrap.ClientBootstrap;
+import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.channel.Channel;
 import org.jboss.netty.channel.ChannelFuture;
 import org.jboss.netty.channel.ChannelFutureListener;
@@ -71,7 +72,7 @@ public class Client {
 		//default bootstrap
 		SimpleChannelUpstreamHandler handler = new ClientHandler(callBackHandlerMap);
 		this.bootstrap = new ClientBootstrap(new NioClientSocketChannelFactory(Executors.newCachedThreadPool(), Executors.newCachedThreadPool()));
-		this.bootstrap.setPipelineFactory(new PipelineClientFactory(handler,connectTimeout));
+		this.bootstrap.setPipelineFactory(new PipelineClientFactory(handler));
 		this.bootstrap.setOption("tcpNoDelay", true);
 		this.bootstrap.setOption("keepAlive", true);
 	}

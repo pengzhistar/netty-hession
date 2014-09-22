@@ -13,9 +13,6 @@ import com.caucho.hessian.io.HessianRemoteObject;
  * <p>修改历史：(修改人，修改时间，修改原因/内容)</p>
  */
 public class RemoteInterfaceProxyFactory {
-	
-	private ClassLoader _loader;
-	
 	/**
 	 * 功能描述：创建代理类
 	 *
@@ -29,17 +26,16 @@ public class RemoteInterfaceProxyFactory {
 	 *
 	 * <p>修改历史 ：(修改人，修改时间，修改原因/内容)</p>
 	 */
-	public <T> T create(Class<T> api, String beanName) {
+	public <T> T create(Class<T> api, String beanName, ClassLoader loader) {
 		if (api == null)
 			throw new NullPointerException("api must not be null for HessianProxyFactory.create()");
 		InvocationHandler invokeHandler = new RemoteInterfaceProxy(beanName,this);
-		Object  obj = Proxy.newProxyInstance(_loader, new Class[] { api, HessianRemoteObject.class }, invokeHandler);
+		Object  obj = Proxy.newProxyInstance(loader, new Class[] { api, HessianRemoteObject.class }, invokeHandler);
 		return api.cast(obj);
 	}
-	
-	public RemoteInterfaceProxyFactory()
-	  {
-	    this._loader = Thread.currentThread().getContextClassLoader();
-	  }
+
+	public <T> T create(Class<T> api, String beanName) {
+		return create(api, beanName, Thread.currentThread().getContextClassLoader());
+	}
 
 }
