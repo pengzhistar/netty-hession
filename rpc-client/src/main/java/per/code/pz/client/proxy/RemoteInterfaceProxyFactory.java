@@ -8,7 +8,7 @@ import com.caucho.hessian.io.HessianRemoteObject;
 /**
  * 功能描述：接口代理工厂
  *
- * @author  彭志(pengzhi@talkweb.com.cn)
+ * @author  彭志(pengzhistar@sina.com.cn)
  *
  * <p>修改历史：(修改人，修改时间，修改原因/内容)</p>
  */
@@ -19,7 +19,7 @@ public class RemoteInterfaceProxyFactory {
 	/**
 	 * 功能描述：创建代理类
 	 *
-	 * @author  彭志(pengzhi@talkweb.com.cn)
+	 * @author  彭志(pengzhistar@sina.com.cn)
 	 * <p>创建日期 ：2014年9月20日 下午2:38:21</p>
 	 *
 	 * @param api

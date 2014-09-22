@@ -23,7 +23,7 @@ import com.caucho.services.server.AbstractSkeleton;
 /**
  * 功能描述：接口代理请求
  * 
- * @author 彭志(pengzhi@talkweb.com.cn)
+ * @author 彭志(pengzhistar@sina.com.cn)
  * 
  *         <p>
  *         修改历史：(修改人，修改时间，修改原因/内容)
@@ -106,7 +106,7 @@ public class RemoteInterfaceProxy implements InvocationHandler {
 	/**
 	 * 功能描述：如果开启方法重载，那么方法名进行hession计算
 	 *
-	 * @author  彭志(pengzhi@talkweb.com.cn)
+	 * @author 彭志(pengzhistar@sina.com.cn)
 	 * <p>创建日期 ：2014年9月20日 下午2:39:53</p>
 	 *
 	 * @param method

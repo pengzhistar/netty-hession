@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 功能描述：连接池，clientProxy从该池中获取一个客户端发送对象
  *
- * @author  彭志(pengzhi@talkweb.com.cn)
+ * @author 彭志(pengzhistar@sina.com.cn)
  *
  * <p>修改历史：(修改人，修改时间，修改原因/内容)</p>
  */

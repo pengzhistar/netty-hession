@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 /**
  * 功能描述：心跳检测，如果连续3次，还没有任何操作，则做断线处理
  *
- * @author  彭志(pengzhi@talkweb.com.cn)
+ * @author 彭志(pengzhistar@sina.com.cn)
  *
  * <p>修改历史：(修改人，修改时间，修改原因/内容)</p>
  */

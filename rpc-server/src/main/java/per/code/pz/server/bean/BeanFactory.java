@@ -10,7 +10,7 @@ public class BeanFactory {
 	/**
 	 * 功能描述：获取bean
 	 *
-	 * @author  彭志(pengzhi@talkweb.com.cn)
+	 * @author 彭志(pengzhistar@sina.com.cn)
 	 * <p>创建日期 ：2014年9月18日 下午1:56:55</p>
 	 *
 	 * @param beanName
