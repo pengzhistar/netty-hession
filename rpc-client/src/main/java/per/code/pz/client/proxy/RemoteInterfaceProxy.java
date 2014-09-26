@@ -92,10 +92,14 @@ public class RemoteInterfaceProxy implements InvocationHandler {
 			transport.setKey(UUID.randomUUID().toString());
 			transport.setProtocol(Protocol.tcp);
 			transport.setBodyBuffer(baos.toByteArray());
-			byte[] response = client.blockingGet(transport, 10000l);
-			ByteArrayInputStream bis = new ByteArrayInputStream(response);
-			HessianInput in = new HessianInput(bis);
-			return in.readObject();
+			byte[] response = client.blockingGet(transport, 1000l);
+			if(response != null){
+				ByteArrayInputStream bis = new ByteArrayInputStream(response);
+				HessianInput in = new HessianInput(bis);
+				return in.readObject();
+			}else {
+				return null;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

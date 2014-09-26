@@ -15,10 +15,20 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 import per.code.pz.server.bean.BeanFactory;
+import per.code.pz.server.netty.Server;
+import per.code.pz.server.netty.ServerHandler;
 
-public class SpringBean implements ApplicationContextAware {
-//	public static ApplicationContext context = null; 
-
+public class NettySpring implements ApplicationContextAware {
+	
+	public NettySpring(int port) {
+		Server server=new Server(8080, new ServerHandler());
+		try {
+			server.startUp();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public void setApplicationContext(ApplicationContext context)
 			throws BeansException {

@@ -36,7 +36,7 @@ public class ClientHandler extends SimpleChannelUpstreamHandler{
 		if(handler!=null){
 			handler.processor(transport.getBodyBuffer());
 		}else{
-			logger.error("Can not find the handle with the key {}", keyString);
+			logger.error("Can not find the handle with the key {},because timeout", keyString);
 		}
 	}
 	

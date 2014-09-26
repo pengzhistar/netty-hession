@@ -32,6 +32,7 @@ public class ClientSender {
 	private ConnectionPool connectionPool;
 	private final Result result = new Result();
 	private volatile boolean hasNotified = false;
+	private int connectTimeout;
 	
 	public ClientSender(Channel channel, ConcurrentHashMap<String, ResultHandler> callbackHandlerMap, ConnectionPool connectionPool){
 		this.channel = channel;
@@ -73,7 +74,9 @@ public class ClientSender {
 						
 					}
 				});
+				//bug OOM 客户端未接收到服务端响应，那么客户端不会remove当前ResultHandler 
 				result.wait(timeout);
+				callbackHandlerMap.remove(messages.getKey());
 			}catch (Exception e) {
 				logger.error("BlockingGet error.", e);
 			}
