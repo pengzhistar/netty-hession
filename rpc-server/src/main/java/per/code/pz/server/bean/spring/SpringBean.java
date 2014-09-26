@@ -10,13 +10,18 @@
 
 package per.code.pz.server.bean.spring;
 
+import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 import per.code.pz.server.bean.BeanFactory;
 
-public class SpringBean {
+public class SpringBean implements ApplicationContextAware {
 //	public static ApplicationContext context = null; 
-	public static void initBean(ApplicationContext context){
+
+	@Override
+	public void setApplicationContext(ApplicationContext context)
+			throws BeansException {
 		String [] beanNames = context.getBeanDefinitionNames();
 		if(beanNames != null)
 		for (String name : beanNames) {
